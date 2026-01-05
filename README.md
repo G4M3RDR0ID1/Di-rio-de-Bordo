@@ -43,15 +43,14 @@ O objetivo deste projeto é aplicar conceitos de **Progressive Web Apps**, propo
 ## 5. Estrutura do Projeto
 
 Exercício módulo 31/
-│
 ├── index.html
 ├── style.css
 ├── script.js
 ├── manifest.json
 ├── service-worker.js
 └── icons/
-├── icon-192.png
-└── icon-512.png
+    ├── icon-192.png
+    └── icon-512.png
 
 ---
 
