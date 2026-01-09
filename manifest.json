@@ -1,14 +1,14 @@
 {
-  "id": "/Di-rio-de-Bordo/",
   "name": "Diário de Bordo",
   "short_name": "Diário",
   "description": "Aplicativo Web Progressivo para registro de atividades diárias, com funcionamento offline e armazenamento local.",
-  "start_url": ".",
-  "scope": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#1976d2",
+  "theme_color": "#121212",
   "background_color": "#ffffff",
+  "lang": "pt-BR",
 
   "icons": [
     {
