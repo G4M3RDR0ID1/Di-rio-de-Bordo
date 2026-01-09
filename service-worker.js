@@ -1,12 +1,16 @@
 const CACHE_NAME = 'diario-de-bordo-v1';
 
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/manifest.json',
+  './',
+  './index.html',
+  './style.css',
+  './script.js',
+  './manifest.json',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+  './screenshots/home.png'
 ];
+
 
 // Instala o service worker e salva arquivos essenciais
 self.addEventListener('install', (event) => {
@@ -36,18 +40,18 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      // Retorna do cache se existir
       if (cachedResponse) {
         return cachedResponse;
       }
 
-      // Senão tenta buscar na rede
       return fetch(event.request).catch(() => {
-        // Fallback básico offline
-        if (event.request.mode === 'navigate') {
-          return caches.match('/index.html');
-        }
+        // fallback seguro
+        return new Response('', {
+          status: 503,
+          statusText: 'Offline',
+        });
       });
     })
   );
 });
+
