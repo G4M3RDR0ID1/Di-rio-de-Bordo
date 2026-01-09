@@ -65,18 +65,38 @@ if ("serviceWorker" in navigator) {
   .catch(err => console.error("Erro ao registar o service worker: ", err))
 }
 
-/* Instalação */
+/* Instalação PWA */
 let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
 
-window.addEventListener("beforeinstallprompt", e => {
-  e.preventDefault();
-  deferredPrompt = e;
+window.addEventListener("beforeinstallprompt", (event) => {
+  // Impede o banner automático
+  event.preventDefault();
+
+  // Guarda o evento
+  deferredPrompt = event;
+
+  // Mostra o botão
   installBtn.hidden = false;
 });
 
-installBtn.addEventListener("click", () => {
+installBtn.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+
+  // Mostra o prompt de instalação
   deferredPrompt.prompt();
+
+  const { outcome } = await deferredPrompt.userChoice;
+
+  console.log(`Resultado da instalação: ${outcome}`);
+
+  // Limpa e esconde o botão
   deferredPrompt = null;
+  installBtn.hidden = true;
+});
+
+// Quando o app for instalado
+window.addEventListener("appinstalled", () => {
+  console.log("PWA instalado com sucesso");
   installBtn.hidden = true;
 });
