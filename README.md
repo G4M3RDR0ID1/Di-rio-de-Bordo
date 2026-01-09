@@ -1,97 +1,103 @@
-# Diário de Bordo – Aplicativo Web Progressivo (PWA)
+# Diário de Bordo — Progressive Web App (PWA)
 
-## 1. Introdução
-
-Este projeto consiste no desenvolvimento de um **Aplicativo Web Progressivo (Progressive Web App – PWA)** denominado **Diário de Bordo**, cujo objetivo é permitir o registro de atividades diárias do usuário de forma simples e eficiente. A aplicação foi desenvolvida utilizando tecnologias web padrão e segue boas práticas de desenvolvimento, acessibilidade e otimização.
-
----
-
-## 2. Objetivo
-
-O objetivo deste projeto é aplicar conceitos de **Progressive Web Apps**, proporcionando uma aplicação que:
-
-- Permita o registro de atividades diárias
-- Funcione corretamente em modo offline
-- Possa ser instalada na tela inicial do dispositivo
-- Armazene dados localmente no navegador
-- Atenda requisitos básicos de acessibilidade e SEO
+O Diário de Bordo é uma aplicação web desenvolvida como **Progressive Web App (PWA)** que permite ao usuário registrar atividades diárias de forma simples e organizada.  
+O projeto foi criado com foco em **funcionamento offline**, **instalação como aplicativo**, **persistência local de dados** e **boas práticas de desenvolvimento front-end**.
 
 ---
 
-## 3. Funcionalidades Implementadas
+## Objetivo do Projeto
 
-- Criação de entradas contendo **título**, **descrição** e **data**
+Aplicar os principais conceitos de **Progressive Web Apps**, desenvolvendo uma aplicação que:
+
+- Permite o registro de atividades diárias
+- Funciona corretamente em modo offline
+- Pode ser instalada como aplicativo (desktop ou mobile)
+- Armazena dados localmente no navegador
+- Segue boas práticas de acessibilidade e SEO
+
+---
+
+## Funcionalidades
+
+- Criação de entradas com título, descrição e data
 - Listagem das entradas registradas
 - Remoção de entradas existentes
-- Persistência dos dados utilizando **localStorage**
-- Interface responsiva para dispositivos móveis e desktops
+- Persistência de dados utilizando LocalStorage
+- Interface responsiva para desktop e dispositivos móveis
 - Animações visuais ao adicionar e remover registros
+- Funcionamento offline completo
+- Botão customizado para instalação do aplicativo (PWA)
 
 ---
 
-## 4. Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-- **HTML5** – Estrutura da aplicação  
-- **CSS3** – Estilização e responsividade  
-- **JavaScript (Vanilla)** – Lógica da aplicação  
-- **Service Worker** – Suporte ao funcionamento offline  
-- **Web App Manifest** – Configuração do PWA  
-- **LocalStorage** – Armazenamento persistente de dados  
+- HTML5 — Estrutura semântica da aplicação  
+- CSS3 — Estilização, layout e responsividade  
+- JavaScript (Vanilla) — Lógica da aplicação  
+- Service Worker — Cache e funcionamento offline  
+- Web App Manifest — Configuração do PWA  
+- LocalStorage — Armazenamento persistente de dados  
 
 ---
 
-## 5. Estrutura do Projeto
+## Estrutura do Projeto
 
-Exercício módulo 31/
+```text
+/
 ├── index.html
 ├── style.css
 ├── script.js
 ├── manifest.json
 ├── service-worker.js
-└── icons/
-    ├── icon-192.png
-    └── icon-512.png
+├── icons/
+│   ├── icon-192.png
+│   └── icon-512.png
+└── screenshots/
+    └── home.png
+```
 
 ---
 
-## 6. Progressive Web App (PWA)
+## Progressive Web App (PWA)
 
-A aplicação atende aos principais critérios exigidos para um PWA:
+A aplicação atende aos principais critérios exigidos para um PWA moderno:
 
-- Manifest configurado com nome, ícones e cores
-- Ícones nos tamanhos 192x192 e 512x512
+- Manifest configurado com nome, ícones, cores e screenshots
+- Ícones nos tamanhos 192x192 e 512x512 (maskable)
 - Service Worker registrado e ativo
-- Funcionamento offline
-- Possibilidade de instalação como aplicativo
+- Funcionamento offline estável
+- Instalação como aplicativo em desktop e dispositivos móveis
+- HTTPS via deploy
 - Compatibilidade com o Lighthouse do Chrome DevTools
 
 ---
 
-## 7. Acessibilidade
+## Acessibilidade
 
 Foram aplicadas boas práticas de acessibilidade, incluindo:
 
-- Uso de **labels associados aos campos de formulário**
-- Estrutura semântica adequada
+- Uso de labels associados aos campos de formulário
+- Estrutura HTML semântica
 - Compatibilidade com leitores de tela
 
-Essas melhorias garantem maior inclusão e melhor avaliação nos testes automáticos.
+Essas práticas contribuem para uma melhor experiência do usuário e melhor avaliação em testes automáticos.
 
 ---
 
-## 8. SEO
+## SEO
 
-A aplicação segue práticas básicas de otimização para mecanismos de busca, tais como:
+A aplicação segue práticas básicas de SEO, como:
 
 - Definição de título da página
-- Inclusão de metadescrição
+- Inclusão de meta description
 - Estrutura HTML adequada
 
 ---
 
-## 9. Testes e Validação
+## Testes e Validação
 
-A aplicação foi testada por meio da ferramenta **Lighthouse**, disponível no Chrome DevTools, obtendo boas pontuações nas seguintes categorias:
+O projeto foi validado utilizando a ferramenta Lighthouse, obtendo boas pontuações nas categorias:
 
 - Performance
 - Acessibilidade
@@ -101,24 +107,46 @@ A aplicação foi testada por meio da ferramenta **Lighthouse**, disponível no 
 
 ---
 
-## 10. Execução do Projeto
+## Como executar o projeto localmente
 
-Para o funcionamento correto do PWA, recomenda-se a execução por meio de um servidor local.
+### Clonar o repositório
+```bash
+git clone https://github.com/G4M3RDR0ID1/Di-rio-de-Bordo.git
+```
 
-### Procedimento sugerido:
-- Utilizar a extensão **Live Server** no Visual Studio Code
-- Abrir o arquivo `index.html` por meio do Live Server
+### Acessar a pasta do projeto
+```bash
+cd Di-rio-de-Bordo
+```
+
+### Executar utilizando um servidor local
+Recomenda-se o uso da extensão Live Server no Visual Studio Code.
+
+---
+
+## Deploy
+
+A aplicação está disponível online com HTTPS através do Netlify:
+
+https://diario-d-bordo.netlify.app/
 
 ---
 
-## 11. Instalação da Aplicação
+## Instalação do Aplicativo
 
-Após a execução em um navegador compatível, a aplicação pode ser instalada na tela inicial do dispositivo por meio do botão de instalação disponibilizado pelo navegador.
+Ao acessar o site em um navegador compatível (Chrome, Edge ou mobile), será exibido um botão “Instalar Aplicação”, permitindo adicionar o app à tela inicial e utilizá-lo como um aplicativo nativo.
+
+---
+
+## Autor
+
+Projeto desenvolvido por **Lucas Lana**, como parte do curso de Front-End da EBAC, com foco na aplicação prática dos conceitos de Progressive Web Apps (PWA).
 
 ---
 
-## 12. Autor
+## Status do Projeto
 
-Projeto desenvolvido por **Lucas Lana**, com finalidade acadêmica, como atividade prática sobre Progressive Web Apps (PWA).
-
----
+Concluído  
+PWA funcional  
+Offline e instalável  
+Pronto para portfólio  
